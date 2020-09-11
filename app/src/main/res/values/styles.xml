@@ -17,16 +17,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="divider">
+    <style name="Divider">
         <item name="color">@color/separator</item>
         <item name="android:layout_marginStart">12dp</item>
         <item name="android:layout_marginEnd">12dp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
-    <style name="Button">
+    <style name="Button" parent="Widget.AppCompat.Button.Borderless">
         <item name="textAllCaps">false</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button</item>
         <item name="android:textSize">15sp</item>
     </style>
 
@@ -45,6 +46,24 @@
     <style name="SecondaryTextStyle">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/gray</item>
+    </style>
+    
+    <style name="FieldName">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+    </style>
+
+    <style name="InputText">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:hint">@color/inputTextHint</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
 </resources>

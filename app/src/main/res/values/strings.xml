@@ -3,9 +3,25 @@
     <string name="type_collection">Тип сбора</string>
     <string name="purpose_collection">Целевой сбор</string>
     <string name="when_have_purpose">Когда есть определённая цель</string>
-    <string name="regular_collection">Регулярный сбор</string>
     <string name="if_every_month_need_help">Если помощь нужна ежемесячно</string>
     <string name="donations">Пожертвования</string>
     <string name="have_not_collections">У вас пока нет сборов.\nНачните доброе дело.</string>
     <string name="create_collection">Создать сбор</string>
+    <string name="load_cover">Загрузить обложку</string>
+    <string name="collection_name">Название сбора</string>
+    <string name="how_many_need_to_collect">Сколько нужно собрать?</string>
+    <string name="for_example_human_healing">Например, лечение человека</string>
+    <string name="how_will_they_help_someone">На что пойдут деньги и как они кому-то \nпомогут?</string>
+    <string name="where_get_money">Куда получать деньги</string>
+    <string name="next">Далее</string>
+    <string name="vk_pay_1234">Счёт VK Pay · 1234</string>
+    <string name="description">Описание</string>
+    <string name="purpose">Цель</string>
+    <string name="sum">Сумма, ₽</string>
+    <string name="sum_in_month">Сумма в месяц, ₽</string>
+    <string name="regular_collection">Регулярный сбор</string>
+    <string name="how_many_need_in_month">Сколько нужно в месяц?</string>
+    <string name="shelter_support">Например, поддержка приюта</string>
+    <string name="author">Автор</string>
+    <string name="matvey">Матвей Правосудов</string>
 </resources>
