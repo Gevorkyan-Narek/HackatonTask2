@@ -11,19 +11,15 @@
         style="@style/Header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="12dp"
-        android:text="Пожертвования"
+        android:text="@string/donations"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="128dp" />
 
     <View
         android:id="@+id/divider"
-        style="@style/Separator"
+        style="@style/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
@@ -38,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="У вас пока нет сборов.\nНачните доброе дело." />
+            android:text="@string/have_not_collections" />
 
         <Button
             android:id="@+id/startCollecting"
@@ -48,7 +44,7 @@
             android:layout_gravity="center"
             android:background="@drawable/button"
             android:layout_marginTop="24dp"
-            android:text="Создать сбор" />
+            android:text="@string/create_collection" />
 
     </LinearLayout>
 

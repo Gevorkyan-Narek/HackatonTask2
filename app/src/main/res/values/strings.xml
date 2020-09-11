@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">HackatonTask2</string>
+    <string name="type_collection">Тип сбора</string>
+    <string name="purpose_collection">Целевой сбор</string>
+    <string name="when_have_purpose">Когда есть определённая цель</string>
+    <string name="regular_collection">Регулярный сбор</string>
+    <string name="if_every_month_need_help">Если помощь нужна ежемесячно</string>
+    <string name="donations">Пожертвования</string>
+    <string name="have_not_collections">У вас пока нет сборов.\nНачните доброе дело.</string>
+    <string name="create_collection">Создать сбор</string>
 </resources>
