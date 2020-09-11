@@ -12,5 +12,15 @@ class ChooseTypeCollectionFragment: Fragment(R.layout.choose_type_collection_fra
         backButton.setOnClickListener {
             fragmentManager?.popBackStack()
         }
+
+        purposeCollection.setOnClickListener {
+            fragmentManager!!.beginTransaction().addToBackStack("chooseTypeCollection")
+                .replace(R.id.collection_fragment, PurposeCollectionFragment()).commit()
+        }
+
+        regularCollection.setOnClickListener {
+            fragmentManager!!.beginTransaction().addToBackStack("chooseTypeCollection")
+                .replace(R.id.collection_fragment, RegularCollectionFragment()).commit()
+        }
     }
 }
