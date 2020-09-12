@@ -1,8 +1,9 @@
-package com.cyclone.hackatontask2
+package com.cyclone.hackatontask2.collection
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.cyclone.hackatontask2.R
 import kotlinx.android.synthetic.main.choose_type_collection_fragment.*
 
 class ChooseTypeCollectionFragment: Fragment(R.layout.choose_type_collection_fragment) {

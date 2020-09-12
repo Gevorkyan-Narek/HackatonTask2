@@ -1,173 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/header"
-        style="@style/Header"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/purpose_collection"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:paddingBottom="12dp">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        style="@style/BackButton"
-        android:layout_width="20dp"
-        android:layout_height="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/header"
+            style="@style/Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/purpose_collection"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawablePadding="11dp"
-        android:text="@string/load_cover"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp"
-        app:drawableLeftCompat="@drawable/ic_gallery"
-        app:layout_constraintBottom_toBottomOf="@id/load_cover"
-        app:layout_constraintEnd_toEndOf="@id/load_cover"
-        app:layout_constraintStart_toStartOf="@id/load_cover"
-        app:layout_constraintTop_toTopOf="@id/load_cover" />
+        <ImageButton
+            android:id="@+id/backButton"
+            style="@style/BackButton"
+            android:layout_width="20dp"
+            android:layout_height="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-    <ImageButton
-        android:id="@+id/load_cover"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/cover_background"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="11dp"
+            android:text="@string/load_cover"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            app:drawableLeftCompat="@drawable/ic_gallery"
+            app:layout_constraintBottom_toBottomOf="@id/load_cover"
+            app:layout_constraintEnd_toEndOf="@id/load_cover"
+            app:layout_constraintStart_toStartOf="@id/load_cover"
+            app:layout_constraintTop_toTopOf="@id/load_cover" />
 
-    <TextView
-        android:id="@+id/label_collection_name"
-        style="@style/FieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/collection_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/load_cover" />
+        <ImageButton
+            android:id="@+id/load_cover"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/cover_background"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            tools:ignore="ContentDescription" />
 
-    <EditText
-        android:id="@+id/inputCollectionName"
-        style="@style/InputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/input_text_background"
-        android:hint="@string/collection_name"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_collection_name" />
+        <TextView
+            android:id="@+id/label_collection_name"
+            style="@style/FieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/collection_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/load_cover" />
 
-    <TextView
-        android:id="@+id/label_sum"
-        style="@style/FieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sum"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputCollectionName" />
+        <EditText
+            android:id="@+id/inputCollectionName"
+            style="@style/InputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/collection_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_collection_name" />
 
-    <EditText
-        android:id="@+id/inputSum"
-        style="@style/InputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/input_text_background"
-        android:hint="@string/how_many_need_to_collect"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_sum" />
+        <TextView
+            android:id="@+id/label_sum"
+            style="@style/FieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sum"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputCollectionName" />
 
-    <TextView
-        android:id="@+id/label_purpose"
-        style="@style/FieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/purpose"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputSum" />
+        <EditText
+            android:id="@+id/inputSum"
+            style="@style/InputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/how_many_need_to_collect"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_sum" />
 
-    <EditText
-        android:id="@+id/inputPurpose"
-        style="@style/InputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/input_text_background"
-        android:hint="@string/for_example_human_healing"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_purpose" />
+        <TextView
+            android:id="@+id/label_purpose"
+            style="@style/FieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/purpose"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputSum" />
 
-    <TextView
-        android:id="@+id/label_description"
-        style="@style/FieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputPurpose" />
+        <EditText
+            android:id="@+id/inputPurpose"
+            style="@style/InputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/for_example_human_healing"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_purpose" />
 
-    <EditText
-        android:id="@+id/inputDescription"
-        style="@style/InputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/input_text_background"
-        android:hint="@string/how_will_they_help_someone"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:singleLine="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_description" />
+        <TextView
+            android:id="@+id/label_description"
+            style="@style/FieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputPurpose" />
 
-    <TextView
-        android:id="@+id/label_where_get_money"
-        style="@style/FieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/where_get_money"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputDescription" />
+        <EditText
+            android:id="@+id/inputDescription"
+            style="@style/InputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/how_will_they_help_someone"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_description" />
 
-    <EditText
-        android:id="@+id/whereGetMoney"
-        style="@style/InputText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/input_text_background"
-        android:drawableEnd="@drawable/ic_chevron_down"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:paddingEnd="15dp"
-        android:singleLine="false"
-        android:text="@string/vk_pay_1234"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_where_get_money"
-        tools:ignore="LabelFor,RtlSymmetry" />
+        <TextView
+            android:id="@+id/label_where_get_money"
+            style="@style/FieldName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/where_get_money"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputDescription" />
 
-    <Button
-        style="@style/Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:text="@string/next"
-        app:layout_constraintTop_toBottomOf="@id/whereGetMoney" />
+        <EditText
+            android:id="@+id/whereGetMoney"
+            style="@style/InputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingEnd="15dp"
+            android:singleLine="false"
+            android:text="@string/vk_pay_1234"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_where_get_money"
+            tools:ignore="LabelFor,RtlSymmetry" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/nextButton"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/next"
+            app:layout_constraintTop_toBottomOf="@id/whereGetMoney"
+            tools:layout_editor_absoluteX="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -9,4 +9,5 @@
     <color name="inputTextHint">#818C99</color>
     <color name="inputTextBackground">#F2F3F5</color>
     <color name="inputTextCorner">#d5d6d8</color>
+    <color name="buttonDisabled">#b6cfeb</color>
 </resources>

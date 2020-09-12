@@ -89,7 +89,7 @@
             android:background="@drawable/input_text_background"
             android:hint="@string/how_many_need_in_month"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="numberSigned"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/label_sum" />
@@ -192,6 +192,7 @@
             tools:ignore="LabelFor,RtlSymmetry" />
 
         <Button
+            android:id="@+id/createCollection"
             style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

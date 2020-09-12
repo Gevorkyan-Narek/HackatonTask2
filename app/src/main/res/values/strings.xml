@@ -24,4 +24,11 @@
     <string name="shelter_support">Например, поддержка приюта</string>
     <string name="author">Автор</string>
     <string name="matvey">Матвей Правосудов</string>
+    <string name="additionaly">Дополнительно</string>
+    <string name="collection_ended">Сбор завершится</string>
+    <string name="when_get_sum">Когда соберём сумму</string>
+    <string name="in_selected_day">В определённую дату</string>
+    <string name="date_ended">Дата окончания</string>
+    <string name="choose_date">Выберите дату</string>
+    <string name="write_author">Укажите автора</string>
 </resources>
