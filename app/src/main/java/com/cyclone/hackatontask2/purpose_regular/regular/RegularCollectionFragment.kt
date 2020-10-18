@@ -1,36 +1,41 @@
-package com.cyclone.hackatontask2.collection
+package com.cyclone.hackatontask2.purpose_regular.regular
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.cyclone.hackatontask2.R
+import com.cyclone.hackatontask2.main.BaseFragment
+import com.cyclone.hackatontask2.purpose_regular.PurposeRegularPresenter
+import com.cyclone.hackatontask2.purpose_regular.PurposeRegularView
 import com.jakewharton.rxbinding.widget.RxTextView
 import kotlinx.android.synthetic.main.choose_type_collection_fragment.backButton
 import kotlinx.android.synthetic.main.regular_collection_fragment.*
+import moxy.presenter.InjectPresenter
 import rx.Observable
-import java.io.FileNotFoundException
 
-class RegularCollectionFragment : Fragment(R.layout.regular_collection_fragment) {
+class RegularCollectionFragment : BaseFragment(R.layout.regular_collection_fragment),
+    PurposeRegularView {
 
     companion object {
         private const val PICK_PHOTO = 1
     }
 
+    @InjectPresenter
+    lateinit var regularPresenter: PurposeRegularPresenter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         backButton.setOnClickListener {
-            fragmentManager?.popBackStack()
+            navigateTo.backFragment()
         }
 
         createCollection.setOnClickListener {
-            fragmentManager!!.beginTransaction().addToBackStack("regular_collection")
-                .replace(R.id.collection_fragment, PurposeCollectionAdditionFragment()).commit()
+            navigateTo.toMain()
         }
 
         load_cover.setOnClickListener {
@@ -48,8 +53,7 @@ class RegularCollectionFragment : Fragment(R.layout.regular_collection_fragment)
             RxTextView.textChanges(inputCollectionName),
             RxTextView.textChanges(inputDescription)
         ) { t1, t2, t3, t4, t5 ->
-            createCollection.isEnabled =
-                t1.isNotEmpty() && t2.isNotEmpty() && t3.isNotEmpty() && t4.isNotEmpty() && t5.isNotEmpty()
+            regularPresenter.switchButton(t1.isNotEmpty() && t2.isNotEmpty() && t3.isNotEmpty() && t4.isNotEmpty() && t5.isNotEmpty())
         }.subscribe()
     }
 
@@ -59,16 +63,19 @@ class RegularCollectionFragment : Fragment(R.layout.regular_collection_fragment)
         when (requestCode) {
             PICK_PHOTO -> {
                 if (resultCode == Activity.RESULT_OK && data != null) {
-                    try {
-                        val path = data.data!!
-                        Glide.with(context!!).load(path).apply(
-                            RequestOptions().transform(CenterCrop(), RoundedCorners(10))
-                        ).into(load_cover)
-                    } catch (e: FileNotFoundException) {
-                        e.printStackTrace()
-                    }
+                    regularPresenter.loadCover(data.data)
                 }
             }
         }
+    }
+
+    override fun loadCover(path: Uri?) {
+        Glide.with(context!!).load(path).apply(
+            RequestOptions().transform(CenterCrop(), RoundedCorners(10))
+        ).into(load_cover)
+    }
+
+    override fun isEnable(enable: Boolean) {
+        createCollection.isEnabled = enable
     }
 }

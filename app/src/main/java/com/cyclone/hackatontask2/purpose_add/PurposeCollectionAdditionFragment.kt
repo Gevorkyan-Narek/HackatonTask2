@@ -1,25 +1,32 @@
-package com.cyclone.hackatontask2.collection
+package com.cyclone.hackatontask2.purpose_add
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.fragment.app.Fragment
 import com.cyclone.hackatontask2.R
+import com.cyclone.hackatontask2.main.BaseFragment
 import com.jakewharton.rxbinding.widget.RxTextView
 import kotlinx.android.synthetic.main.purpose_collection_additionaly_fragment.*
+import moxy.presenter.InjectPresenter
 import rx.Observable
 
 class PurposeCollectionAdditionFragment :
-    Fragment(R.layout.purpose_collection_additionaly_fragment) {
+    BaseFragment(R.layout.purpose_collection_additionaly_fragment), PurposeAddView {
+
+    @InjectPresenter
+    lateinit var presenter: PurposeAddPresenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        backButton.setOnClickListener { navigateTo.backFragment() }
 
         Observable.combineLatest(
             RxTextView.textChanges(inputDate),
             RxTextView.textChanges(inputAuthor)
         ) { t1, t2 ->
-            startCollecting.isEnabled = t1.isNotEmpty() && t2.isNotEmpty()
+            presenter.isEnableButton(t1.isNotEmpty() && t2.isNotEmpty())
         }.subscribe()
 
     }
+
+    override fun isEnable(enable: Boolean) { startCollecting.isEnabled = enable }
 }
