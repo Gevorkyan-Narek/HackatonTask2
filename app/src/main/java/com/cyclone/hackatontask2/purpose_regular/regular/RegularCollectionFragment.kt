@@ -10,16 +10,17 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.cyclone.hackatontask2.R
-import com.cyclone.hackatontask2.main.BaseFragment
+import com.cyclone.hackatontask2.main.MainActivity
 import com.cyclone.hackatontask2.purpose_regular.PurposeRegularPresenter
 import com.cyclone.hackatontask2.purpose_regular.PurposeRegularView
 import com.jakewharton.rxbinding.widget.RxTextView
 import kotlinx.android.synthetic.main.choose_type_collection_fragment.backButton
 import kotlinx.android.synthetic.main.regular_collection_fragment.*
+import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 import rx.Observable
 
-class RegularCollectionFragment : BaseFragment(R.layout.regular_collection_fragment),
+class RegularCollectionFragment : MvpAppCompatFragment(R.layout.regular_collection_fragment),
     PurposeRegularView {
 
     companion object {
@@ -31,11 +32,11 @@ class RegularCollectionFragment : BaseFragment(R.layout.regular_collection_fragm
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         backButton.setOnClickListener {
-            navigateTo.backFragment()
+            (activity as MainActivity).presenter.toBackFragment()
         }
 
         createCollection.setOnClickListener {
-            navigateTo.toMain()
+            (activity as MainActivity).presenter.toMainFragment()
         }
 
         load_cover.setOnClickListener {
